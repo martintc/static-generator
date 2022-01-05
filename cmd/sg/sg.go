@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	ianus "github.com/advancebsd/ianus"
+	lex "github.com/advancebsd/ianus/markdownLexer"
 )
 
 func main() {
@@ -33,6 +33,8 @@ func main() {
 		os.Exit(0)
 	}
 
+	var lexer lex.Lexer
+	lexer.InitializeLexer(string(source))
 	fmt.Println(source)
 
 
