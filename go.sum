@@ -2,3 +2,5 @@ github.com/advancebsd/ianus v0.0.0-20211227060206-71863c9e3960 h1:lPZ9R/FTL6jHCX
 github.com/advancebsd/ianus v0.0.0-20211227060206-71863c9e3960/go.mod h1:tUEUZTzyndrIL34M/FX1jyMBxTa7yDVWZ/Er70QVRSE=
 github.com/advancebsd/ianus v0.0.0-20220105083640-3c7b7874751b h1:Rn14zUAJGSNOeot8gKsYM4tMQwsxyoI18II5zKtRKwA=
 github.com/advancebsd/ianus v0.0.0-20220105083640-3c7b7874751b/go.mod h1:WpLvcQ02KdVp6v39x1lDIJ+s1/TjO1gLDBdcGgwMVdk=
+github.com/advancebsd/ianus v0.0.0-20220105230647-f623ff97aeaa h1:aGZ0SOUVDlyC5IJ7iLgKyjIBPb2ooYmICPkJa/X/ttI=
+github.com/advancebsd/ianus v0.0.0-20220105230647-f623ff97aeaa/go.mod h1:WpLvcQ02KdVp6v39x1lDIJ+s1/TjO1gLDBdcGgwMVdk=
