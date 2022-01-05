@@ -6,11 +6,12 @@ import (
 	"os"
 
 	lex "github.com/advancebsd/ianus/markdownLexer"
+	gemtextRender "github.com/advancebsd/ianus/gemtextRender"
 )
 
 func main() {
 	helpPtr := flag.Bool("h", false, "help")
-	srcPtr := flag.String("s", "", "Source file to convert")
+	srcPtr := flag.String("i", "", "Source file to convert")
 	destPtr := flag.String("o", "", "Destination file for converted file")
 
 	flag.Parse()
@@ -33,9 +34,31 @@ func main() {
 		os.Exit(0)
 	}
 
+	fmt.Printf("Tokenizing %s\n", *srcPtr)
+
 	var lexer lex.Lexer
 	lexer.InitializeLexer(string(source))
-	fmt.Println(source)
+	var token lex.Token
+	var tokens []lex.Token
+	token = lexer.NextToken()
+	for token.Type != lex.EOF {
+		tokens = append(tokens, token)
+		token = lexer.NextToken()
+	}
 
+	fmt.Printf("Rendering %s into %s\n", *srcPtr, *destPtr)
 
+	var g gemtextRender.GemtextRender
+	g.InitializeGemtextRender(tokens)
+	gemtext, err := g.RenderDocument()
+	if err != nil {
+		fmt.Println("Could not render the request document to Gemtext")
+		os.Exit(1)
+	}
+	er := os.WriteFile(*destPtr, []byte(gemtext), 0644)
+	if er != nil {
+		fmt.Println("Could not output the file")
+	}
+
+	fmt.Println("Render complete")
 }
