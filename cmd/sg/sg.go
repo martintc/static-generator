@@ -72,6 +72,11 @@ func main() {
 	}
 
 	if *htmlPtr == true {
+		file, err := os.Create(*destPtr + ".html")
+		defer file.Close()
+		if err != nil {
+			panic(err)
+		}
 		var h htmlRender.HtmlRender
 		h.InitializeHtmlRender(tokens)
 		html_text, err := h.RenderDocument()
@@ -79,8 +84,16 @@ func main() {
 			fmt.Println("Could not render the requested document to HTML")
 			os.Exit(1)
 		}
-		er := os.WriteFile(*destPtr + ".html", []byte(html_text), 0644)
-		if er != nil {
+		_, err = file.Write([]byte("<html>\n"))
+		if err != nil {
+			fmt.Println("Could not output the file to Html")
+		}
+		_, err = file.Write([]byte(html_text))
+		if err != nil {
+			fmt.Println("Could not output the file to Html")
+		}
+		_, err = file.Write([]byte("</html>\n"))
+		if err != nil {
 			fmt.Println("Could not output the file to Html")
 		}
 	}
