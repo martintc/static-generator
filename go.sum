@@ -1,8 +1,4 @@
-github.com/advancebsd/ianus v0.0.0-20220131100229-c21beb007841 h1:I9G9r6sJtKK9l5G8LkXM9WkjQiJQuRI+HwKy984/Pdo=
-github.com/advancebsd/ianus v0.0.0-20220131100229-c21beb007841/go.mod h1:WpLvcQ02KdVp6v39x1lDIJ+s1/TjO1gLDBdcGgwMVdk=
-github.com/advancebsd/ianus v0.0.0-20220304073807-1d1a82393245 h1:LuImX7A3ZRziiq+sU0gY70vKJBPbAkKPqKZct4EZeJE=
-github.com/advancebsd/ianus v0.0.0-20220304073807-1d1a82393245/go.mod h1:WpLvcQ02KdVp6v39x1lDIJ+s1/TjO1gLDBdcGgwMVdk=
-github.com/advancebsd/ianus v0.0.0-20220315131703-6238ea764b87 h1:aPgPQ8ZJ72BjEsVDHe8tWFTh/nV+4OKwTIC6XGTju9Q=
-github.com/advancebsd/ianus v0.0.0-20220315131703-6238ea764b87/go.mod h1:WpLvcQ02KdVp6v39x1lDIJ+s1/TjO1gLDBdcGgwMVdk=
 github.com/advancebsd/ianus v0.0.0-20220319062818-022b6558f77d h1:3DjYZlcoDS7SgBi8EHXSVtZO12/Z8u57VbPi463ndaM=
 github.com/advancebsd/ianus v0.0.0-20220319062818-022b6558f77d/go.mod h1:WpLvcQ02KdVp6v39x1lDIJ+s1/TjO1gLDBdcGgwMVdk=
+github.com/advancebsd/ianus v0.0.0-20220319064120-d3f870352e0c h1:xf+PDKRT8KxSaF8gzZal7RdOiFKFT1pfWDxyAzbaI9E=
+github.com/advancebsd/ianus v0.0.0-20220319064120-d3f870352e0c/go.mod h1:WpLvcQ02KdVp6v39x1lDIJ+s1/TjO1gLDBdcGgwMVdk=
