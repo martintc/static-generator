@@ -6,8 +6,8 @@ import (
 	"os"
 
 	gemtextRender "github.com/advancebsd/ianus/gemtextRender"
-	lex "github.com/advancebsd/ianus/markdownLexer"
 	htmlRender "github.com/advancebsd/ianus/htmlRender"
+	lex "github.com/advancebsd/ianus/markdownLexer"
 )
 
 func main() {
@@ -51,6 +51,7 @@ func main() {
 	var tokens []lex.Token
 	token = lexer.NextToken()
 	for token.Type != lex.EOF {
+		fmt.Printf("%s: \"%s\"\n", token.Type, token.Literal)
 		tokens = append(tokens, token)
 		token = lexer.NextToken()
 	}
@@ -65,7 +66,7 @@ func main() {
 			fmt.Println("Could not render the request document to Gemtext")
 			os.Exit(1)
 		}
-		er := os.WriteFile(*destPtr + ".gmi", []byte(gemtext), 0644)
+		er := os.WriteFile(*destPtr+".gmi", []byte(gemtext), 0644)
 		if er != nil {
 			fmt.Println("Could not output the file to gemtext")
 		}
@@ -77,8 +78,7 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		var h htmlRender.HtmlRender
-		h.InitializeHtmlRender(tokens)
+		var h = htmlRender.InitializeHtmlRender(tokens)
 		html_text, err := h.RenderDocument()
 		if err != nil {
 			fmt.Println("Could not render the requested document to HTML")
